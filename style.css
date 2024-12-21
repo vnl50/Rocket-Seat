@@ -1,0 +1,197 @@
+/* CANCEL BROWSER'S STANDARD MARGIN AND PADDING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS VARIABLES FOR DARK AND LIGHT MODE */
+
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    /* LIST NORMAL */
+    --li-bg-color: rgba(255, 255, 255, 0.05);
+    --li-border-color: rgba(255, 255, 255, 0.5);
+    /* LIST ON HOVER */
+    --li-bg-color-hover: rgba(0, 0, 0, 0.2);
+    --li-border-color-hover: white;
+    /* SOCIAL ICONS HIGHTLIGHT ON HOVER */
+    --social-ico-hl: rgba(255, 255, 255, 0.2);
+    /* SWITCH */
+    --switch-bg: url(./assets/moon-stars.svg);
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    /* LIST NORMAL */
+    --li-bg-color: rgba(0, 0, 0, 0.05);
+    --li-border-color: rgba(0, 0, 0, 0.5);
+    /* LIST ON HOVER */
+    --li-bg-color-hover:rgba(0, 0, 0, 0.1);
+    --li-border-color-hover: black;
+    /* SOCIAL ICONS HIGHTLIGHT ON HOVER */
+    --social-ico-hl: rgba(0, 0, 0, 0.1);
+    /* SWITCH */
+    --switch-bg: url(./assets/sun.svg);
+}
+
+/* ADDING A PICTURE TO THE BACKGROUND */
+
+body {
+    background: var(--bg-url) no-repeat top center/cover
+}
+
+/* APPLYING THE FONT TO THE WHOLE BODY */
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+
+/* BOX WITH PICTURE AND TEXT */
+
+#container {
+    width: 360px;
+    margin: 56px auto 0px;
+    padding: 0 24px
+}
+
+/* BOX WITH PROFILE */
+
+#profile {
+    padding: 24px 0;
+    text-align: center;
+}
+
+/* PICTURE */
+
+#avatar-pic { 
+    width: 112px; height: 112px;
+    display: inline;
+}
+
+/* TEXT UNDER PICTURE */
+
+#profile p {
+    margin-top: 8px;
+}
+
+/* SWITCH */
+
+#switch {
+    width: 64px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#switch-track {
+    display: block;
+    width: 64px; height: 24px;
+    background: var(--li-bg-color);
+    border: 1px solid var(--li-border-color);
+    border-radius: 9999px;
+    -webkit-backdrop-filter: blur(4px);
+}
+
+#switch-button {
+    width: 32px; height: 32px;
+    background: white var(--switch-bg) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ANOTHER WAY TO CENTER THE BUTTON TO THE TRACK */
+
+/*#switch {
+    height: 40px;
+    width: 64px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+#switch-track {
+    width: 64px; height: 24px;
+    margin: auto;
+    background: var(--li-bg-color);
+    border: 1px solid var(--li-border-color);
+    border-radius: 9999px;
+    -webkit-backdrop-filter: blur(4px);
+    position: static;
+}
+
+#switch-button {
+    width: 32px; height: 32px;
+    margin: auto;
+    background: white var(--switch-bg) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute; top: 4px; left: 0;
+}*/
+
+/* MAKES THE BUTTON MOVE RIGHT */
+
+.light #switch-button {
+    right: 0;
+    left: initial;
+}
+
+/* LIST */
+
+ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 16px;
+    padding: 24px 0;
+}
+
+ul li a {
+    display: flex; gap: 16px; justify-content: center; 
+    padding: 16px 24px;
+    text-decoration: none; 
+    background: var(--li-bg-color);
+    border: 1px solid var(--li-border-color);
+    border-radius: 8px;
+    /*A NON-STANDARD FEATURE THAT ADDS BLUR 
+    (IT'S AN EXTRA THAT MIGHT NOT BE ACCEPTED IN EVERY BROWSER)*/
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: background 0.5s;
+}
+
+ul li a:hover {
+background: var(--li-bg-color-hover);
+border: 1.5px solid var(--li-border-color-hover);
+}
+
+/* SOCIAL ICONS */
+
+#social-links {
+display: flex; justify-content: center; gap: 16px;
+padding: 24px;
+}
+
+#social-links ion-icon {
+font-size: 24px;
+padding: 8px;
+transition: background 0.5s;
+border-radius: 50%;
+}
+
+#social-links ion-icon:hover {
+background: var(--social-ico-hl);
+border-radius: 50%;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 14px;
+}
