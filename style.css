@@ -106,6 +106,7 @@ body * {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    animation: slide-back 0.1s;
 }
 
 /* ANOTHER WAY TO CENTER THE BUTTON TO THE TRACK */
@@ -140,8 +141,7 @@ body * {
 /* MAKES THE BUTTON MOVE RIGHT */
 
 .light #switch-button {
-    right: 0;
-    left: initial;
+    animation: slide-in 0.1s forwards;
 }
 
 /* LIST */
@@ -199,6 +199,7 @@ footer {
 }
 
 /* @RULE TO CHANGE THE SIZE OF BACKGROUNDS IN DIFFERENT DEVICES */
+
 @media (min-width: 700px) {
     :root {
         --bg-url: url(./assets/bg-desktop.jpg)
@@ -206,5 +207,25 @@ footer {
 
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg)
+    }
+}
+
+/* @KEYFRAME TO ADD ANIMATIONS */
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
