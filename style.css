@@ -144,6 +144,12 @@ body * {
     animation: slide-in 0.1s forwards;
 }
 
+/* HOVER ANIMATION FOR THE SWITCH BUTTON */
+
+#switch button:hover {
+    outline: 8px solid var(--social-ico-hl);
+}
+
 /* LIST */
 
 ul {
