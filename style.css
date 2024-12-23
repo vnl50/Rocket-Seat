@@ -196,3 +196,14 @@ footer {
     padding: 24px;
     font-size: 14px;
 }
+
+/* @RULE TO CHANGE THE SIZE OF PICTUREA */
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url(./assets/bg-desktop.jpg)
+    }
+
+    .light {
+        --bg-url: url(./assets/bg-desktop-light.jpg)
+    }
+}
